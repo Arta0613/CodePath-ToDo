@@ -2,4 +2,6 @@
     <string name="app_name">CodePath-ToDo</string>
     <string name="todo_add_item">Buy Milk…</string>
     <string name="todo_add">Add ToDo</string>
+    <string name="something_went_wrong">Something went wrong. Please try again</string>
+    <string name="all_tasks_complete">I guess there\'s nothing to do!</string>
 </resources>
