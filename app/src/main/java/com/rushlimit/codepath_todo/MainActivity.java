@@ -1,7 +1,7 @@
 package com.rushlimit.codepath_todo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,14 +13,18 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.raizlabs.android.dbflow.sql.language.SQLite;
+
 import java.util.ArrayList;
+
+import database.Task;
 
 public class MainActivity extends AppCompatActivity {
     private Button todoAddButton;
     private EditText todoToAdd;
 
-    private ArrayList<String> items;
-    private ArrayAdapter<String> itemsAdapter;
+    private ArrayList<Task> items;
+    private ArrayAdapter<Task> itemsAdapter;
     private ListView lvItems;
 
     @Override
@@ -35,17 +39,25 @@ public class MainActivity extends AppCompatActivity {
         todoToAdd = (EditText) findViewById(R.id.todoToAdd);
 
         lvItems = (ListView) findViewById(R.id.todoListView);
-        items = new ArrayList<>();
-        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+
+        setupListView();
+
         lvItems.setAdapter(itemsAdapter);
         setupListViewListener();
+    }
+
+    private void setupListView() {
+        items = (ArrayList<Task>) SQLite.select().from(Task.class).queryList();
+        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
     }
 
     private void setupListViewListener() {
         lvItems.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long id) {
+                Task task = items.get(pos);
                 items.remove(pos);
+                task.delete();
                 itemsAdapter.notifyDataSetChanged();
                 return true;
             }
@@ -87,7 +99,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        itemsAdapter.add(textToAdd);
+        // TODO: 12/14/16 add task detail when app is fleshed out
+        Task task = new Task();
+        task.setTask(textToAdd);
+        task.save();
+
+        itemsAdapter.add(task);
         todoToAdd.setText("");
     }
 }
