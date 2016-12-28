@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">CodePath-ToDo</string>
+    <string name="app_name">CodePath Todo App</string>
+    <string name="todo_add_item">Buy Milk…</string>
+    <string name="todo_add">Add Todo</string>
+    <string name="something_went_wrong">Something went wrong. Please try again</string>
+    <string name="all_todos_complete">I guess there\'s nothing to do!</string>
+    <string name="save">Save</string>
+    <string name="edit_todo_cancel">Cancel and Close</string>
+    <string name="todo">TODO:</string>
+    <string name="edit_todo_empty_save_error">Seems like you\'re trying to update it to nothing!</string>
+    <string name="welcome_to_app">
+        Welcome to the ~Codepath~ Todo App!\n\n
+        Add a todo and tap \"ADD TODO\" to get started, or\n
+        Delete any todo you\'ve added by long pressing on it.\n\n
+        (This message will be gone after you save your first todo and open the app again
+        or if you tap on it now.)</string>
 </resources>
