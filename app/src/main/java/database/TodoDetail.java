@@ -12,30 +12,30 @@ import org.parceler.Parcel;
  * Created by aminm on 12/14/16.
  */
 @Table(database = ToDoDatabase.class)
-@Parcel(analyze = {TaskDetail.class})
-public class TaskDetail extends BaseModel {
+@Parcel(analyze = {TodoDetail.class})
+public class TodoDetail extends BaseModel {
     @Column
     @PrimaryKey
     int id;
 
     @Column
     @ForeignKey(saveForeignKeyModel = false)
-    Task task;
+    Todo todo;
 
     @Column
-    String taskDetail;
+    String todoDetail;
 
     @Column
     boolean isCompleted;
 
     @Column
-    TaskPriority taskPriority;
+    TodoPriority todoPriority;
 
     @Column
-    long taskDate;
+    long todoDate;
 
     // Empty constructor for Parceler library
-    public TaskDetail() {
+    public TodoDetail() {
 
     }
 
@@ -47,20 +47,20 @@ public class TaskDetail extends BaseModel {
         this.id = id;
     }
 
-    public Task getTask() {
-        return task;
+    public Todo getTodo() {
+        return todo;
     }
 
-    public void setTask(Task task) {
-        this.task = task;
+    public void setTodo(Todo todo) {
+        this.todo = todo;
     }
 
-    public String getTaskDetail() {
-        return taskDetail;
+    public String getTodoDetail() {
+        return todoDetail;
     }
 
-    public void setTaskDetail(String taskDetail) {
-        this.taskDetail = taskDetail;
+    public void setTodoDetail(String todoDetail) {
+        this.todoDetail = todoDetail;
     }
 
     public boolean isCompleted() {
@@ -71,19 +71,19 @@ public class TaskDetail extends BaseModel {
         isCompleted = completed;
     }
 
-    public TaskPriority getTaskPriority() {
-        return taskPriority;
+    public TodoPriority getTodoPriority() {
+        return todoPriority;
     }
 
-    public void setTaskPriority(TaskPriority taskPriority) {
-        this.taskPriority = taskPriority;
+    public void setTodoPriority(TodoPriority todoPriority) {
+        this.todoPriority = todoPriority;
     }
 
-    public long getTaskDate() {
-        return taskDate;
+    public long getTodoDate() {
+        return todoDate;
     }
 
-    public void setTaskDate(long taskDate) {
-        this.taskDate = taskDate;
+    public void setTodoDate(long todoDate) {
+        this.todoDate = todoDate;
     }
 }

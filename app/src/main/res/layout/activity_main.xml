@@ -24,9 +24,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:text="@string/todo_add"
             android:layout_alignParentRight="true"
-            android:onClick="addItem"/>
+            android:onClick="addItem"
+            android:text="@string/todo_add"/>
 
         <EditText
             android:id="@+id/todoToAdd"
@@ -46,6 +46,23 @@
             android:layout_height="match_parent"
             android:layout_above="@id/todoAddButton"
             android:layout_marginBottom="10dp"/>
+
+        <FrameLayout
+            android:id="@+id/welcome_todo_getting_started"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="removeWelcomeView"
+                android:text="@string/welcome_to_app"
+                android:textSize="20sp"/>
+
+        </FrameLayout>
 
     </RelativeLayout>
 </LinearLayout>

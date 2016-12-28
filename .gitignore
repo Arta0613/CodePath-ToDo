@@ -1,10 +1,9 @@
 *.iml
+.idea/
 .gradle
 /local.properties
 .idea/uiDesigner.xml
 target
-/.idea/workspace.xml
-/.idea/libraries
 .DS_Store
 /build
 /captures
@@ -22,9 +21,6 @@ target
 bin/
 gen/
 
-# Local configuration file (sdk path, etc)
-local.properties
-
 # Eclipse project files
 .classpath
 .project
@@ -36,9 +32,6 @@ proguard-project.txt
 # Android Studio
 *.ipr
 *.iws
-.gradle/**
-build/**
-.idea/**
 import-summary.txt
 
 *.pydevproject

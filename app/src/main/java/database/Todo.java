@@ -11,17 +11,17 @@ import org.parceler.Parcel;
  * Created by aminm on 12/14/16.
  */
 @Table(database = ToDoDatabase.class)
-@Parcel(analyze = {Task.class})
-public class Task extends BaseModel {
+@Parcel(analyze = {Todo.class})
+public class Todo extends BaseModel {
     @Column
     @PrimaryKey(autoincrement = true)
     int id;
 
     @Column
-    String task;
+    String todo;
 
     // Empty constructor for Parceler library
-    public Task() {
+    public Todo() {
 
     }
 
@@ -29,16 +29,16 @@ public class Task extends BaseModel {
         return id;
     }
 
-    public String getTask() {
-        return task;
+    public String getTodo() {
+        return todo;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setTodo(String todo) {
+        this.todo = todo;
     }
 
     @Override
     public String toString() {
-        return getTask();
+        return getTodo();
     }
 }
